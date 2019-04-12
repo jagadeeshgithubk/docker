@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-service-name
+spec:
+  selector:
+    app: hello-link-to-service
+  ports:
+    - protocol: TCP
+      # Port accessible inside cluster
+      port: 9080
+      # Port to forward to inside POD
+      targetPort: 80
+      # Port accessible outside cluster
+      nodePort: 30001
+  type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-deployment-name
+spec:
+  replicas: 2
+#  selector:
+#    matchLabels:
+#      run: my-nginx
+  template:
+    metadata:
+      labels:
+        app: hello-link-to-service
+    spec:
+      containers:
+        - name: hello-container
+          image: jagadeeshdockerk/mydockerrepo:dt090419
+          ports:
+            - containerPort: 80
