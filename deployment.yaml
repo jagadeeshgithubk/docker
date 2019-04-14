@@ -11,17 +11,17 @@ spec:
       # Port accessible inside cluster
       port: 9080
       # Port to forward to inside POD
-      targetPort: 80
+      targetPort: 9080
       # Port accessible outside cluster
       nodePort: 30001
-  type: LoadBalancer
+  type: NodePort
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: hello-deployment-name
 spec:
-  replicas: 2
+  replicas: 1
 #  selector:
 #    matchLabels:
 #      run: my-nginx
@@ -34,4 +34,4 @@ spec:
         - name: hello-container
           image: jagadeeshdockerk/mydockerrepo:dt090419
           ports:
-            - containerPort: 80
+            - containerPort: 9080
