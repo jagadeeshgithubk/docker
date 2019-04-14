@@ -1,0 +1,5 @@
+---
+applications:
+  - name: spring-boot-hellodocker
+  memory: 768M
+  path: ../target/hello-docker-0.0.1-SNAPSHOT.jar
