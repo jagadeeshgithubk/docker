@@ -20,3 +20,7 @@ http://192.168.99.100:30001/hello/test
 DashboardURL:
 --------------
 http://127.0.0.1:53502/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/#!/overview?namespace=default
+
+https://www.assistanz.com/steps-to-install-kubernetes-dashboard/
+https://www.edureka.co/blog/kubernetes-dashboard/https://www.assistanz.com/steps-to-install-kubernetes-dashboard/
+https://www.edureka.co/blog/kubernetes-dashboard/
