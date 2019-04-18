@@ -17,4 +17,6 @@ http://192.168.99.100:30001/hello/test
 9080: is port used for spring boot
 30001: external port for connecting from outside the cluster
 
-
+DashboardURL:
+--------------
+http://127.0.0.1:53502/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/#!/overview?namespace=default
