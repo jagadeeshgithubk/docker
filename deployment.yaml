@@ -13,18 +13,18 @@ spec:
       # Port to forward to inside POD
       targetPort: 9080
       # Port accessible outside cluster
-      nodePort: 30001
+      nodePort: 30002
   type: NodePort
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-deployment-name
 spec:
   replicas: 1
-#  selector:
-#    matchLabels:
-#      run: my-nginx
+  selector:
+    matchLabels:
+      app: hello-link-to-service
   template:
     metadata:
       labels:
